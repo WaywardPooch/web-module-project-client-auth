@@ -1,12 +1,10 @@
 // Libraries
 import React from "react";
-// Components
-import { LoginForm } from "../../components";
 
 export const HomePage = () => {
   return (
     <section>
-      <LoginForm />
+      <h1>Home Page</h1>
     </section>
   );
 };

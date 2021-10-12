@@ -5,15 +5,15 @@ import { Switch, Route } from "react-router-dom";
 import { Navbar, Footer } from "./components";
 // Pages
 import { HomePage } from "./pages";
+import { LoginPage } from "./pages";
 
 const App = () => {
   return (
     <>
       <Navbar />
       <Switch>
-        <Route path="/">
-          <HomePage />
-        </Route>
+        <Route path="/login" component={LoginPage} />
+        <Route path="/" component={HomePage} />
       </Switch>
       <Footer />
     </>

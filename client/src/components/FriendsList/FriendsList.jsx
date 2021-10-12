@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FriendCard } from "./../../components";
 import { axiosWithAuth } from "./../../utilities";
@@ -26,7 +25,7 @@ export const FriendsList = () => {
     <>
       {friends ? (
         friends.map((friend) => {
-          return <FriendCard />;
+          return <FriendCard friend={friend} />;
         })
       ) : (
         <p>Loading Friends...</p>

@@ -4,7 +4,8 @@ import { FriendsList } from "./../../components";
 export const FriendsPage = () => {
   return (
     <section>
-      <FriendsList />
+      <h1>Friends Page</h1>
+      {/* <FriendsList /> */}
     </section>
   );
 };

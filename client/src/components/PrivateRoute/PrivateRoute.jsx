@@ -7,13 +7,13 @@ export const PrivateRoute = ({ component: Component, ...rest }) => {
       {...rest}
       render={(props) => {
         // If a token exists in localstorage...
-        localStorage.getItem("token") ? (
+        if (localStorage.getItem("token")) {
           // ...render the desired page...
-          <Component {...props} />
-        ) : (
+          return <Component {...props} />;
+        } else {
           // ...otherwise, go to the login page.
-          <Redirect to="/login" />
-        );
+          return <Redirect to="/login" />;
+        }
       }}
     />
   );

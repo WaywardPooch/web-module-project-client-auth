@@ -4,3 +4,4 @@ export * from "./Footer";
 export * from "./PrivateRoute";
 export * from "./FriendCard";
 export * from "./FriendsList";
+export * from "./Logout";

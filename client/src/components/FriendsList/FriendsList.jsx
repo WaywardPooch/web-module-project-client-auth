@@ -25,7 +25,7 @@ export const FriendsList = () => {
     <>
       {friends ? (
         friends.map((friend) => {
-          return <FriendCard friend={friend} />;
+          return <FriendCard key={friend.id} friend={friend} />;
         })
       ) : (
         <p>Loading Friends...</p>

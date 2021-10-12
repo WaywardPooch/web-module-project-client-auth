@@ -4,8 +4,7 @@ import { Switch, Route } from "react-router-dom";
 // Components
 import { Navbar, Footer } from "./components";
 // Pages
-import { HomePage } from "./pages";
-import { LoginPage } from "./pages";
+import { HomePage, LoginPage } from "./pages";
 
 const App = () => {
   return (

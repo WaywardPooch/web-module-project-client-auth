@@ -29,7 +29,6 @@ export const LoginForm = (props) => {
       // After storing, send the user to the friends page
       .then((response) => {
         localStorage.setItem("token", response.data.payload);
-        console.log(response.data.payload);
         history.push("/friends");
       })
       // If the post failed, log the error to the console

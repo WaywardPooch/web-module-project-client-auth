@@ -7,6 +7,7 @@ export const Navbar = () => {
       <h3>Navbar</h3>
       <Link to="/">Home</Link>
       <Link to="/login">Login</Link>
+      <Link to="/friends">Friends</Link>
     </header>
   );
 };

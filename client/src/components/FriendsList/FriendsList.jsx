@@ -1,23 +1,25 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FriendCard } from "./../../components";
+import { axiosWithAuth } from "./../../utilities";
 
 export const FriendsList = () => {
   const [friends, setFriends] = useState(null);
 
-  const getFriends = () => {
-    axios
+  const updateFriends = () => {
+    axiosWithAuth()
       .get("http://localhost:5000/api/friends")
       .then((response) => {
-        console.log(response);
+        setFriends(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
-        console.error("[AXIOS ERROR]", error);
+        console.error("[UPDATE FRIENDS]", error);
       });
   };
 
   useEffect(() => {
-    getFriends();
+    updateFriends();
   }, []);
 
   return (

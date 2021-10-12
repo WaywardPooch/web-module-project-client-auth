@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-export const LoginForm = () => {
+export const LoginForm = (props) => {
   // States
   const [credentials, setCredentials] = useState({
     username: "",
@@ -27,6 +27,7 @@ export const LoginForm = () => {
       // After storing, send the user to the friends page
       .then((response) => {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("username", response.data.username);
         props.history.push("/friends");
       })
       // If the post failed, log the error to the console

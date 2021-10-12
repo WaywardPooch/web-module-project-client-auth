@@ -5,7 +5,7 @@ import { Switch, Route } from "react-router-dom";
 // Components
 import { Navbar, Footer, PrivateRoute, Logout } from "./components";
 // Pages
-import { HomePage, LoginPage, FriendsPage } from "./pages";
+import { HomePage, LoginPage, FriendsPage, AddFriendPage } from "./pages";
 
 const App = () => {
   return (
@@ -13,6 +13,7 @@ const App = () => {
       <Navbar />
       <Switch>
         <PrivateRoute path="/friends" component={FriendsPage} />
+        <PrivateRoute path="/add-friend" component={AddFriendPage} />
         <PrivateRoute path="/logout" component={Logout} />
         <Route path="/login" component={LoginPage} />
         <Route path="/" component={HomePage} />

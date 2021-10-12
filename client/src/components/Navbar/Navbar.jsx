@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-  const isLoggedIn = localStorage.getItem("token");
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, [isLoggedIn]);
 
   return (
     <header>
@@ -11,6 +19,7 @@ export const Navbar = () => {
       {isLoggedIn ? (
         <>
           <Link to="/friends">Friends</Link>
+          <Link to="/add-friend">Add New Friend</Link>
           <Link to="/logout">Log Out</Link>
         </>
       ) : (

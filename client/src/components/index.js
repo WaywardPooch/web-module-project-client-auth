@@ -5,3 +5,4 @@ export * from "./PrivateRoute";
 export * from "./FriendCard";
 export * from "./FriendsList";
 export * from "./Logout";
+export * from "./AddFriendForm";

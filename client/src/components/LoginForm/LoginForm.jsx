@@ -1,5 +1,6 @@
 // Libraries
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import axios from "axios";
 
 export const LoginForm = (props) => {
@@ -8,6 +9,7 @@ export const LoginForm = (props) => {
     username: "",
     password: "",
   });
+  const history = useHistory();
 
   // Event handlers
   const handleChange = (event) => {
@@ -26,9 +28,9 @@ export const LoginForm = (props) => {
       // If the post was successful, store the token in localStorage
       // After storing, send the user to the friends page
       .then((response) => {
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("username", response.data.username);
-        props.history.push("/friends");
+        localStorage.setItem("token", response.data.payload);
+        console.log(response.data.payload);
+        history.push("/friends");
       })
       // If the post failed, log the error to the console
       .catch((error) => {

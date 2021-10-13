@@ -1,6 +1,5 @@
 import React from "react";
 import { AddFriendForm } from "./../../components";
-import "./AddFriendPage.css";
 
 export const AddFriendPage = () => {
   return (

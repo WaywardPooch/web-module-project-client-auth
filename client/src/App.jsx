@@ -7,9 +7,6 @@ import { Navbar, Footer, PrivateRoute, Logout } from "./components";
 import { HomePage, LoginPage, FriendsPage, AddFriendPage } from "./pages";
 // Contexts
 import { LoginContext } from "./contexts";
-// Global styles
-import "./styles/global.css";
-import "./styles/form.css";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(null);

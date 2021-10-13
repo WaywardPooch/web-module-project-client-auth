@@ -1,5 +1,4 @@
 import React from "react";
-import "./FriendCard.css";
 
 export const FriendCard = (props) => {
   const { name, age, email } = props.friend;

@@ -1,6 +1,5 @@
 import React from "react";
 import { FriendsList } from "./../../components";
-import "./FriendsPage.css";
 
 export const FriendsPage = () => {
   return (

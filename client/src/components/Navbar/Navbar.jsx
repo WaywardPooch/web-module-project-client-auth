@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { LoginContext } from "./../../contexts";
-import "./Navbar.css";
 
 export const Navbar = () => {
   const { isLoggedIn } = useContext(LoginContext);

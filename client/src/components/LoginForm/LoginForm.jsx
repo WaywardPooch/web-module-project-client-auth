@@ -1,7 +1,8 @@
 // Libraries
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
+import { LoginContext } from "./../../contexts";
 
 export const LoginForm = (props) => {
   // States
@@ -10,6 +11,7 @@ export const LoginForm = (props) => {
     password: "",
   });
   const history = useHistory();
+  const { updateLoginStatus } = useContext(LoginContext);
 
   // Event handlers
   const handleChange = (event) => {
@@ -30,6 +32,7 @@ export const LoginForm = (props) => {
       .then((response) => {
         localStorage.setItem("token", response.data.payload);
         history.push("/friends");
+        updateLoginStatus();
       })
       // If the post failed, log the error to the console
       .catch((error) => {

@@ -1,30 +1,41 @@
 // Libraries
 import React, { useState } from "react";
-import { Redirect } from "react-router";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 // Components
 import { Navbar, Footer, PrivateRoute, Logout } from "./components";
 // Pages
 import { HomePage, LoginPage, FriendsPage, AddFriendPage } from "./pages";
+// Contexts
+import { LoginContext } from "./contexts";
 // Global styles
 import "./styles/global.css";
 import "./styles/form.css";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token"));
+  const [isLoggedIn, setIsLoggedIn] = useState(null);
+
+  const updateLoginStatus = () => {
+    if (localStorage.getItem("token")) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  };
 
   return (
     <>
-      <Navbar isLoggedIn={isLoggedIn} />
-      <Switch>
-        <PrivateRoute path="/friends" component={FriendsPage} />
-        <PrivateRoute path="/add-friend" component={AddFriendPage} />
-        <PrivateRoute path="/logout" component={Logout} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/" component={HomePage} />
-        <Redirect to="/" />
-      </Switch>
-      <Footer />
+      <LoginContext.Provider value={{ isLoggedIn, updateLoginStatus }}>
+        <Navbar isLoggedIn={isLoggedIn} />
+        <Switch>
+          <PrivateRoute path="/friends" component={FriendsPage} />
+          <PrivateRoute path="/add-friend" component={AddFriendPage} />
+          <PrivateRoute path="/logout" component={Logout} />
+          <Route path="/login" component={LoginPage} />
+          <Route path="/" component={HomePage} />
+          <Redirect to="/" />
+        </Switch>
+        <Footer />
+      </LoginContext.Provider>
     </>
   );
 };

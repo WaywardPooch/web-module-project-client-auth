@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { LoginContext } from "./../../contexts";
 import "./Navbar.css";
 
-export const Navbar = (props) => {
-  const { isLoggedIn } = props;
+export const Navbar = () => {
+  const { isLoggedIn } = useContext(LoginContext);
 
   return (
     <header className="navbar">

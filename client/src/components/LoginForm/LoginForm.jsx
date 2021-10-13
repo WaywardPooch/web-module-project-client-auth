@@ -39,26 +39,28 @@ export const LoginForm = (props) => {
 
   // Form markup
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className="form" onSubmit={handleSubmit}>
+      <label className="form__label">
         Username
         <input
+          className="form__text-field"
           type="text"
           name="username"
           value={credentials.username}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="form__label">
         Password
         <input
+          className="form__text-field"
           type="password"
           name="password"
           value={credentials.password}
           onChange={handleChange}
         />
       </label>
-      <button>Log In</button>
+      <button className="form__button">Log In</button>
     </form>
   );
 };

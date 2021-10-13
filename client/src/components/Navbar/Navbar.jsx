@@ -2,16 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
-export const Navbar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(null);
-
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, [isLoggedIn]);
+export const Navbar = (props) => {
+  const { isLoggedIn } = props;
 
   return (
     <header className="navbar">

@@ -1,5 +1,5 @@
 // Libraries
-import React from "react";
+import React, { useState } from "react";
 import { Redirect } from "react-router";
 import { Switch, Route } from "react-router-dom";
 // Components
@@ -11,9 +11,11 @@ import "./styles/global.css";
 import "./styles/form.css";
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("token"));
+
   return (
     <>
-      <Navbar />
+      <Navbar isLoggedIn={isLoggedIn} />
       <Switch>
         <PrivateRoute path="/friends" component={FriendsPage} />
         <PrivateRoute path="/add-friend" component={AddFriendPage} />

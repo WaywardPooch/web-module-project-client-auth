@@ -1,0 +1,16 @@
+.footer {
+  align-items: center;
+  background-color: var(--theme-color-dark);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 6rem 0;
+  position: absolute;
+  width: 100%;
+}
+
+.footer__text {
+  color: var(--theme-color-light);
+  font-size: 1.8rem;
+}

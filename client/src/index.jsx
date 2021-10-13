@@ -4,6 +4,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 // Components
 import App from "./App";
+// Styles
+import "./styles/reset.css";
 
 // Render the app
 ReactDOM.render(

@@ -6,6 +6,8 @@ import { Switch, Route } from "react-router-dom";
 import { Navbar, Footer, PrivateRoute, Logout } from "./components";
 // Pages
 import { HomePage, LoginPage, FriendsPage, AddFriendPage } from "./pages";
+// Global styles
+import "./styles/global.css";
 
 const App = () => {
   return (

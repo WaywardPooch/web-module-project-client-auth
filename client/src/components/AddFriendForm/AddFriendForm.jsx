@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { useHistory } from "react-router";
 import { axiosWithAuth } from "./../../utilities";
 
 export const AddFriendForm = () => {
@@ -10,7 +11,7 @@ export const AddFriendForm = () => {
     age: "",
     email: "",
   });
-
+  const history = useHistory();
   // Event handlers
   const handleChange = (event) => {
     setNewFriend({
@@ -28,6 +29,7 @@ export const AddFriendForm = () => {
       .catch((error) => {
         console.error("[FAILURE TO ADD FRIEND]", error);
       });
+    history.push("/friends");
   };
 
   return (

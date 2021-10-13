@@ -1,12 +1,10 @@
 .footer {
-  align-items: center;
   background-color: var(--theme-color-dark);
   bottom: 0;
-  display: flex;
-  justify-content: center;
   margin-top: auto;
   padding: 6rem 0;
   position: absolute;
+  text-align: center;
   width: 100%;
 }
 

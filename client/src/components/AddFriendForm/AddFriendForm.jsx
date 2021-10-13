@@ -31,35 +31,38 @@ export const AddFriendForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form className="form" onSubmit={handleSubmit}>
+      <label className="form__label">
         Name
         <input
+          className="form__text-field"
           type="text"
           name="name"
           value={newFriend.name}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="form__label">
         Age
         <input
+          className="form__text-field"
           type="text"
           name="age"
           value={newFriend.age}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label className="form__label">
         Email
         <input
+          className="form__text-field"
           type="email"
           name="email"
           value={newFriend.email}
           onChange={handleChange}
         />
       </label>
-      <button>Add New Friend</button>
+      <button className="form__button">Add New Friend</button>
     </form>
   );
 };

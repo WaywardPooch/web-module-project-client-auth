@@ -1,0 +1,16 @@
+:root {
+  --theme-color-accent: mediumspringgreen;
+  --theme-color-dark: #2f2f2f;
+  --theme-color-light: #eee;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 62.5%;
+  line-height: 1.4;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--theme-color-light);
+}

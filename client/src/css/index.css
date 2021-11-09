@@ -1,0 +1,15 @@
+/* Global */
+@import url("./dist/css/global/reset.css");
+@import url("./dist/css/global/global.css");
+
+/* Pages */
+@import url("./dist/css/pages/HomePage.css");
+@import url("./dist/css/pages/LoginPage.css");
+@import url("./dist/css/pages/FriendsPage.css");
+@import url("./dist/css/pages/AddFriendPage.css");
+
+/* Components */
+@import url("./dist/css/components/Navbar.css");
+@import url("./dist/css/components/Footer.css");
+@import url("./dist/css/components/FriendCard.css");
+@import url("./dist/css/components/form.css");
